@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   padding: 0;
@@ -14,12 +14,13 @@ body {
     "footer";
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
 }
 
 aside {
   grid-area: aside;
-  background-color: aquamarine;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -36,6 +37,7 @@ aside {
 
 aside h1 {
   font-size: 25px;
+  padding-right: 20px;
 }
 
 .burger {
@@ -43,6 +45,7 @@ aside h1 {
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #ffffff;
 }
 
 menu {
@@ -51,7 +54,6 @@ menu {
   flex-direction: column;
   gap: 10px;
   margin-top: 15px;
-  background-color: aqua;
   padding: 15px;
 }
 
@@ -65,64 +67,55 @@ menu p {
 
 main {
   grid-area: main;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 12px;
+.cards img {
+  width: 300px;
+  filter: grayscale(100%);
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
 }
 
-.carousel-track {
+.card {
   display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.4s ease-in-out;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  border: 0.5px solid #818083;
+  border-radius: 0.25rem;
+  height: 50vh;
 }
 
-.carousel-slide {
-  min-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.card img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
+.card button {
+  background: #c9a227;
+  color: #0f0f0f;
   border: none;
-  padding: 12px 16px;
+  border: none;
+  width: 50%;
+  height: 35px;
+  margin: 10px 0 0 0;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 50%;
 }
 
-.carousel-btn.prev {
-  left: 10px;
-}
-
-.carousel-btn.next {
-  right: 10px;
-}
-
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+.card button:hover {
+  background: #e6c75a;
 }
 
 footer {
   grid-area: footer;
-  background-color: blueviolet;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -150,19 +143,59 @@ footer {
     display: none;
   }
 
+  .cards img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+
+  .card {
+  }
+
+  button {
+    background: #c9a227;
+    color: #0f0f0f;
+    border: none;
+    border: none;
+    width: 50%;
+    height: 35px;
+    margin: 30px;
+    cursor: pointer;
+  }
+
+  .card button:hover {
+    background: #e6c75a;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #818083;
+    border-radius: 0.25rem;
+    margin: 10px 0;
+    
+    width: 20%;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+  }
   menu {
     display: flex;
     width: 100%;
     background-color: transparent;
     padding: 0;
     margin-top: 0;
-  }
-
-  main {
-    background-color: rgb(255, 72, 0);
-  }
-
-  footer {
-    background-color: rgb(226, 43, 119);
   }
 }
